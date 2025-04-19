@@ -1,16 +1,11 @@
-import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import Confetti from 'react-confetti-boom';
 
 interface Props {
   onEnter(): void;
 }
 
 export default function WelcomeScreen({ onEnter }: Props) {
-  const [blast, setBlast] = useState(false);
-
   const handleClick = () => {
-    setBlast(true);
     onEnter();
   };
 
@@ -28,7 +23,6 @@ export default function WelcomeScreen({ onEnter }: Props) {
           Tap to Celebrate 🎉
         </button>
       </div>
-      {blast && <Confetti particleCount={100} />}
     </Dialog>
   );
 }
