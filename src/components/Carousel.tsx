@@ -106,7 +106,7 @@ export default function Carousel() {
       {/* Section 2 */}
       <div className='mt-4 py-2 px-3 bg-rose-50 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl flex-col justify-between items-center text-left'>
         <>
-          <p className='text-gray-700 font-semibold'>
+          <p className='font-comic text-gray-700 font-semibold'>
             {(images as Item[])[currentSlide].caption}
           </p>
           <div className='text-gray-500 w-full text-right'>
