@@ -44,7 +44,10 @@ export default function Carousel() {
     speed: 400,
     slidesToShow: 1,
     autoplay: true,
+    // TODO - CHANGE TO LONGER
     autoplaySpeed: 4000,
+    arrows: false,
+    pauseOnHover: true,
     afterChange: (index: number) => setCurrentSlide(index),
     customPaging: (i: number) => {
       const img = (images as Item[])[i];
@@ -63,7 +66,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className='relative flex flex-col h-[100vh] max-w-sm mx-auto px-2 py-4'>
+    <div className='relative flex flex-col gap-4 h-[100vh] max-w-sm mx-auto px-2 py-4'>
       <div className='absolute inset-0 z-100 pointer-events-none'>
         <Confetti
           mode={'boom'}
@@ -86,7 +89,9 @@ export default function Carousel() {
           ]}
         />
       </div>
-      <div className='relative flex-grow'>
+
+      {/* Section 1 */}
+      <div className='bg-rose-50 p-4 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl overflow-hidden h-fit'>
         <Slider {...settings}>
           {(images as Item[]).map((img, idx) => (
             <Slide
@@ -97,7 +102,9 @@ export default function Carousel() {
           ))}
         </Slider>
       </div>
-      <div className='p-4 bg-white shadow-xl rounded-2xl flex-col justify-between items-center text-left'>
+
+      {/* Section 2 */}
+      <div className='mt-4 py-2 px-3 bg-rose-50 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl flex-col justify-between items-center text-left'>
         <>
           <p className='text-gray-700 font-semibold'>
             {(images as Item[])[currentSlide].caption}
@@ -118,12 +125,16 @@ export default function Carousel() {
           </div>
         </>
       </div>
-      <button
-        onClick={() => window.location.reload()}
-        className='my-6 bg-blue-500 text-white px-4 py-2 rounded-xl shadow-md z-50 w-full'
-      >
-        Open Welcome
-      </button>
+
+      {/* Section 3 */}
+      <div className='mt-auto bg-white p-2 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl'>
+        <button
+          onClick={() => window.location.reload()}
+          className='w-full bg-blue-500 text-white px-4 py-2 rounded-xl shadow-md'
+        >
+          Open Welcome
+        </button>
+      </div>
     </div>
   );
 }
