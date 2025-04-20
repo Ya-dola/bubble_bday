@@ -30,29 +30,30 @@ export default function Carousel() {
   };
 
   return (
-    <div className='max-w-sm mx-auto mt-6 px-2 h-screen sm:h-[100svh]'>
-      <div className='relative'>
-        <div className='absolute inset-0 z-50 pointer-events-none'>
-          <Confetti
-            mode='boom'
-            particleCount={150}
-            colors={[
-              '#ff577f',
-              '#ff884b',
-              '#ffd384',
-              '#6a4c93',
-              '#1982c4',
-              '#8ac926',
-              '#ffca3a',
-              '#ff595e',
-            ]}
-            spreadDeg={40}
-            shapeSize={16}
-            launchSpeed={1.5}
-            deg={270}
-          />
-        </div>
-
+    <div className='relative flex flex-col h-[100vh] max-w-sm mx-auto px-2 py-4'>
+      <div className='absolute inset-0 z-100 pointer-events-none'>
+        <Confetti
+          mode={'boom'}
+          x={0.4}
+          y={0.86}
+          particleCount={320}
+          spreadDeg={18}
+          shapeSize={16}
+          launchSpeed={3.8}
+          deg={270}
+          colors={[
+            '#ff577f',
+            '#ff884b',
+            '#ffd384',
+            '#6a4c93',
+            '#1982c4',
+            '#8ac926',
+            '#ffca3a',
+            '#ff595e',
+          ]}
+        />
+      </div>
+      <div className='relative flex-grow'>
         <Slider {...settings}>
           {(images as Item[]).map((img, idx) => (
             <div key={idx}>
@@ -64,7 +65,7 @@ export default function Carousel() {
           ))}
         </Slider>
       </div>
-      <div className='mt-4 p-4 bg-white shadow-xl rounded-2xl text-center'>
+      <div className='p-4 bg-white shadow-xl rounded-2xl text-center'>
         <p className='text-gray-700 font-semibold'>
           {(images as Item[])[currentSlide].caption}
         </p>
