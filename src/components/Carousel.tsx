@@ -44,7 +44,7 @@ export default function Carousel() {
     speed: 400,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 12000,
     arrows: false,
     pauseOnHover: true,
     afterChange: (index: number) => setCurrentSlide(index),
@@ -59,7 +59,7 @@ export default function Carousel() {
           className='w-10 h-10 object-contain rounded'
         />
       ) : (
-        <span className='w-4 h-4 block bg-rose-400 rounded-full' />
+        <span className='mt-2.25 w-5 h-5 block bg-rose-400 rounded' />
       );
     },
   };
@@ -115,7 +115,7 @@ export default function Carousel() {
           <p className='font-comic text-slate-600 font-semibold text-md'>
             {(images as Item[])[currentSlide].caption}
           </p>
-          <div className='text-slate-500 w-full text-right text-sm font-comic2 tracking-widest'>
+          <div className='text-slate-600 w-full text-right text-sm font-comic2 tracking-widest'>
             {images[currentSlide].link ? (
               <a
                 href={(images as Item[])[currentSlide].link}
