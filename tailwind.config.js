@@ -11,6 +11,7 @@ export default {
           'cursive',
           ...defaultTheme.fontFamily.sans,
         ],
+        comic2: ['"Chewy"', 'cursive', ...defaultTheme.fontFamily.sans],
       },
     },
   },
