@@ -1,5 +1,62 @@
 [
-  { "src": "/images/photo1.jpg", "caption": "Friends & Fun" },
-  { "src": "/images/photo2.jpg", "caption": "Cake Time!" },
-  { "src": "/images/photo3.jpg", "caption": "Make a Wish" }
+  {
+    "src": "/images/c.PNG",
+    "name": "C",
+    "link": "https://x.com/c54942144",
+    "caption": "Happy Birthday Sen!"
+  },
+  {
+    "src": "/images/champsissy.JPG",
+    "name": "Champsissy",
+    "link": "https://x.com/champsissy1",
+    "caption": "Happy Birthday Sen! You are such a blessing to our community and I look forward to every new art piece you deliver. Thank you for inspiring me with your love of chilumi and your incredible artwork! Hope you have a fantastic day and a wonderful year ahead!💕"
+  },
+  {
+    "src": "/images/ela.JPG",
+    "name": "Ela",
+    "link": "https://x.com/elabearie_VT",
+    "caption": "Happiest of birthdays to you, Sen! I wish you nothing but good food, lots of Childe, and fantastic luck on your special day 🥹 enjoy it, you deserve everything, girlie! 💖"
+  },
+  {
+    "src": "/images/kin.JPG",
+    "name": "Kinphyre",
+    "link": "https://x.com/Kinphyre",
+    "caption": "Happy birthday, Sen! You're amazing, an inspiration and a friend. I love your imagination, your humor and your gentleness. You deserve so much in this life, and I look forward to accompanying you on this journey! <3"
+  },
+  {
+    "src": "/images/muffinamyy.JPG",
+    "name": "Amy",
+    "link": "https://x.com/muffinamyy",
+    "caption": "Happy Birthday Sen!"
+  },
+  {
+    "src": "public/images/yeulia.PNG",
+    "name": "Yeulia",
+    "link": "https://x.com/yeuvrays",
+    "caption": "Happy Birthday Sen!"
+  },
+  {
+    "src": "/images/yang.JPG",
+    "name": "Kittah",
+    "link": "https://x.com/KittahtheWolf95",
+    "caption": "Happy Birthday Sen!"
+  },
+  {
+    "src": "/images/yuki.JPG",
+    "name": "Fiamma Rosato",
+    "link": "https://x.com/FiammaRosato",
+    "caption": "Happy Birthday Sen!"
+  },
+  {
+    "src": null,
+    "name": "Viktor",
+    "link": null,
+    "caption": "Happy Birthday Akka! Pls buy me food I'm broke"
+  },
+  {
+    "src": null,
+    "name": "Dola",
+    "link": "https://x.com/ya_dola",
+    "caption": "Happy Birthday Sennn! >.< *Spinning Herta Sticker*"
+  }
 ]
