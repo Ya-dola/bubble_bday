@@ -60,7 +60,7 @@ export default function Carousel() {
           className='w-10 h-10 object-contain rounded'
         />
       ) : (
-        <span className='w-6 h-6 block bg-gray-300 rounded-full' />
+        <span className='w-4 h-4 block bg-rose-400 rounded-full' />
       );
     },
   };
@@ -70,9 +70,9 @@ export default function Carousel() {
       <div className='absolute inset-0 z-100 pointer-events-none'>
         <Confetti
           mode={'boom'}
-          x={0.4}
+          x={0.45}
           y={0.86}
-          particleCount={320}
+          particleCount={360}
           spreadDeg={18}
           shapeSize={16}
           launchSpeed={3.8}
