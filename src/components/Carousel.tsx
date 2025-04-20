@@ -91,7 +91,10 @@ export default function Carousel() {
       </div>
 
       {/* Section 1 */}
-      <div className='bg-rose-50 p-4 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl overflow-hidden h-fit'>
+      <div
+        className='p-4 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.4)]
+       rounded-2xl overflow-hidden h-fit bg-opacity-50'
+      >
         <Slider {...settings}>
           {(images as Item[]).map((img, idx) => (
             <Slide
@@ -104,12 +107,16 @@ export default function Carousel() {
       </div>
 
       {/* Section 2 */}
-      <div className='mt-4 py-2 px-3 bg-rose-50 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl flex-col justify-between items-center text-left'>
+      <div
+        className='mt-4 py-2 px-3 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.4)]
+      rounded-2xl flex-col justify-between items-center text-left backdrop-blur-xl 
+      bg-opacity-50'
+      >
         <>
-          <p className='font-comic text-gray-700 font-semibold'>
+          <p className='font-comic text-slate-600 font-semibold tracking-wide'>
             {(images as Item[])[currentSlide].caption}
           </p>
-          <div className='text-gray-500 w-full text-right'>
+          <div className='text-slate-500 w-full text-right text-sm font-comic2 tracking-widest'>
             {images[currentSlide].link ? (
               <a
                 href={(images as Item[])[currentSlide].link}
