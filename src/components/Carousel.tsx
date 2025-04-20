@@ -14,14 +14,17 @@ interface Item {
   link?: string;
 }
 
-function Slide({ img, idx }: { img: Item; idx: number }) {
+function Slide({ img }: { img: Item; idx: number }) {
   const [errored, setErrored] = useState(false);
   const raw = img.src ? img.src.replace(/^\/+/, '') : '';
   const srcPath = raw ? `${BASE}${raw}` : '';
   if (!img.src || errored) {
     return (
-      <div className='bg-rose-100 h-90 flex items-center justify-center text-gray-500'>
-        Image {idx + 1}
+      <div
+        className='bg-rose-100 h-90 flex items-center justify-center
+       text-slate-600 font-comic2 text-2xl tracking-widest'
+      >
+        Coming Soon...
       </div>
     );
   }
@@ -71,9 +74,9 @@ export default function Carousel() {
           mode={'boom'}
           x={0.45}
           y={0.86}
-          particleCount={360}
+          particleCount={400}
           spreadDeg={18}
-          shapeSize={16}
+          shapeSize={18}
           launchSpeed={3.8}
           deg={270}
           colors={[
@@ -91,7 +94,7 @@ export default function Carousel() {
 
       {/* Section 1 */}
       <div
-        className='p-4 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
+        className='px-3 py-5 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
        rounded-2xl h-fit bg-opacity-50'
       >
         <Slider {...settings}>
@@ -115,7 +118,7 @@ export default function Carousel() {
           <p className='font-comic text-slate-600 font-semibold text-md'>
             {(images as Item[])[currentSlide].caption}
           </p>
-          <div className='text-slate-600 w-full text-right text-sm font-comic2 tracking-widest'>
+          <div className='text-slate-600 w-full text-right text-sm font-comic2 tracking-widest mt-1.5'>
             {images[currentSlide].link ? (
               <a
                 href={(images as Item[])[currentSlide].link}
