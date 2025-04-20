@@ -46,12 +46,20 @@ export default function Carousel() {
     autoplay: true,
     autoplaySpeed: 4000,
     afterChange: (index: number) => setCurrentSlide(index),
-    customPaging: (i: number) => (
-      <button className='w-6 h-6 rounded-full bg-gray-300 text-sm'>
-        {i + 1}
-      </button>
-    ),
-    dotsClass: 'slick-dots flex justify-center space-x-2 mt-4',
+    customPaging: (i: number) => {
+      const img = (images as Item[])[i];
+      const raw = img.src ? img.src.replace(/^\/+/, '') : '';
+      const srcPath = raw ? `${BASE}${raw}` : '';
+      return img.src ? (
+        <img
+          src={srcPath}
+          alt={img.caption}
+          className='w-10 h-10 object-contain rounded'
+        />
+      ) : (
+        <span className='w-6 h-6 block bg-gray-300 rounded-full' />
+      );
+    },
   };
 
   return (
