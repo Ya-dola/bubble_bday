@@ -20,7 +20,7 @@ function Slide({ img, idx }: { img: Item; idx: number }) {
   const srcPath = raw ? `${BASE}${raw}` : '';
   if (!img.src || errored) {
     return (
-      <div className='bg-gray-200 h-100 flex items-center justify-center text-gray-500'>
+      <div className='bg-rose-100 h-110 flex items-center justify-center text-gray-500'>
         Image {idx + 1}
       </div>
     );
@@ -29,7 +29,7 @@ function Slide({ img, idx }: { img: Item; idx: number }) {
     <img
       src={srcPath}
       alt={img.caption}
-      className='h-100 w-full object-contain'
+      className='h-110 w-full object-contain'
       onError={() => setErrored(true)}
     />
   );
@@ -44,8 +44,7 @@ export default function Carousel() {
     speed: 400,
     slidesToShow: 1,
     autoplay: true,
-    // TODO - CHANGE TO LONGER
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     arrows: false,
     pauseOnHover: true,
     afterChange: (index: number) => setCurrentSlide(index),
@@ -92,8 +91,8 @@ export default function Carousel() {
 
       {/* Section 1 */}
       <div
-        className='p-4 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.4)]
-       rounded-2xl overflow-hidden h-fit bg-opacity-50'
+        className='p-4 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
+       rounded-2xl h-fit bg-opacity-50'
       >
         <Slider {...settings}>
           {(images as Item[]).map((img, idx) => (
@@ -108,7 +107,7 @@ export default function Carousel() {
 
       {/* Section 2 */}
       <div
-        className='mt-4 py-2 px-3 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.4)]
+        className='mt-6 py-2 px-3 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
       rounded-2xl flex-col justify-between items-center text-left backdrop-blur-xl 
       bg-opacity-50'
       >
@@ -131,16 +130,6 @@ export default function Carousel() {
             )}
           </div>
         </>
-      </div>
-
-      {/* Section 3 */}
-      <div className='mt-auto bg-white p-2 shadow-[0_0_16px_rgba(251,113,133,0.3)] rounded-2xl'>
-        <button
-          onClick={() => window.location.reload()}
-          className='w-full bg-blue-500 text-white px-4 py-2 rounded-xl shadow-md'
-        >
-          Open Welcome
-        </button>
       </div>
     </div>
   );
