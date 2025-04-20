@@ -20,7 +20,7 @@ function Slide({ img, idx }: { img: Item; idx: number }) {
   const srcPath = raw ? `${BASE}${raw}` : '';
   if (!img.src || errored) {
     return (
-      <div className='bg-rose-100 h-110 flex items-center justify-center text-gray-500'>
+      <div className='bg-rose-100 h-90 flex items-center justify-center text-gray-500'>
         Image {idx + 1}
       </div>
     );
@@ -29,7 +29,7 @@ function Slide({ img, idx }: { img: Item; idx: number }) {
     <img
       src={srcPath}
       alt={img.caption}
-      className='h-110 w-full object-contain'
+      className='h-90 w-full object-contain'
       onError={() => setErrored(true)}
     />
   );
@@ -107,12 +107,12 @@ export default function Carousel() {
 
       {/* Section 2 */}
       <div
-        className='mt-6 py-2 px-3 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
+        className='mt-3 py-2 px-3 bg-rose-200 shadow-[0_0_16px_rgba(251,113,133,0.5)]
       rounded-2xl flex-col justify-between items-center text-left backdrop-blur-xl 
       bg-opacity-50'
       >
         <>
-          <p className='font-comic text-slate-600 font-semibold tracking-wide'>
+          <p className='font-comic text-slate-600 font-semibold text-md'>
             {(images as Item[])[currentSlide].caption}
           </p>
           <div className='text-slate-500 w-full text-right text-sm font-comic2 tracking-widest'>
