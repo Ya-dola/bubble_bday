@@ -5,9 +5,34 @@ import images from '../data/images.json';
 import Confetti from 'react-confetti-boom';
 import { useState } from 'react';
 
+const BASE = import.meta.env.BASE_URL;
+
 interface Item {
-  src: string;
+  src?: string;
   caption: string;
+  name: string;
+  link?: string;
+}
+
+function Slide({ img, idx }: { img: Item; idx: number }) {
+  const [errored, setErrored] = useState(false);
+  const raw = img.src ? img.src.replace(/^\/+/, '') : '';
+  const srcPath = raw ? `${BASE}${raw}` : '';
+  if (!img.src || errored) {
+    return (
+      <div className='bg-gray-200 h-100 flex items-center justify-center text-gray-500'>
+        Image {idx + 1}
+      </div>
+    );
+  }
+  return (
+    <img
+      src={srcPath}
+      alt={img.caption}
+      className='h-100 w-full object-contain'
+      onError={() => setErrored(true)}
+    />
+  );
 }
 
 export default function Carousel() {
@@ -56,19 +81,34 @@ export default function Carousel() {
       <div className='relative flex-grow'>
         <Slider {...settings}>
           {(images as Item[]).map((img, idx) => (
-            <div key={idx}>
-              <div className='bg-gray-200 h-60 flex items-center justify-center text-gray-500'>
-                {/* prototype placeholder */}
-                Image {idx + 1}
-              </div>
-            </div>
+            <Slide
+              key={idx}
+              img={img}
+              idx={idx}
+            />
           ))}
         </Slider>
       </div>
-      <div className='p-4 bg-white shadow-xl rounded-2xl text-center'>
-        <p className='text-gray-700 font-semibold'>
-          {(images as Item[])[currentSlide].caption}
-        </p>
+      <div className='p-4 bg-white shadow-xl rounded-2xl flex-col justify-between items-center text-left'>
+        <>
+          <p className='text-gray-700 font-semibold'>
+            {(images as Item[])[currentSlide].caption}
+          </p>
+          <div className='text-gray-500 w-full text-right'>
+            {images[currentSlide].link ? (
+              <a
+                href={(images as Item[])[currentSlide].link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='underline'
+              >
+                - {(images as Item[])[currentSlide].name}
+              </a>
+            ) : (
+              <span>- {(images as Item[])[currentSlide].name}</span>
+            )}
+          </div>
+        </>
       </div>
       <button
         onClick={() => window.location.reload()}
