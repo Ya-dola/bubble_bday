@@ -47,10 +47,12 @@ export default function Carousel() {
     speed: 400,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 12000,
+    autoplaySpeed: 20000,
     arrows: false,
     pauseOnHover: true,
-    afterChange: (index: number) => setCurrentSlide(index),
+    beforeChange(_, nextSlide: number) {
+      setCurrentSlide(nextSlide);
+    },
     customPaging: (i: number) => {
       const img = (images as Item[])[i];
       const raw = img.src ? img.src.replace(/^\/+/, '') : '';
@@ -115,7 +117,7 @@ export default function Carousel() {
       bg-opacity-50'
       >
         <>
-          <p className='font-comic text-slate-600 font-semibold text-md'>
+          <p className='font-comic text-slate-600 font-semibold text-md whitespace-pre-line'>
             {(images as Item[])[currentSlide].caption}
           </p>
           <div className='text-slate-600 w-full text-right text-sm font-comic2 tracking-widest mt-1.5'>
