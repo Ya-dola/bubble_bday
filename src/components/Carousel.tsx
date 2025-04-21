@@ -20,11 +20,13 @@ function Slide({ img }: { img: Item; idx: number }) {
   const srcPath = raw ? `${BASE}${raw}` : '';
   if (!img.src || errored) {
     return (
-      <div
-        className='bg-rose-100 h-90 flex items-center justify-center
-       text-slate-600 font-comic2 text-2xl tracking-widest'
-      >
-        Coming Soon...
+      <div className='bg-rose-100 h-90 flex flex-col items-center justify-center gap-2'>
+        <p className='text-slate-600 font-comic2 text-2xl tracking-widest'>
+          Coming Soon...
+        </p>
+        <p className='text-slate-600 font-comic2 text-xl tracking-widest'>
+          Still drawing this for you
+        </p>
       </div>
     );
   }
